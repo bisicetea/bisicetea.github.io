@@ -1103,17 +1103,15 @@
                     <div class="col-xs-12 col-sm-8">
                       <div id="map" class="map">
                           <div class="lmpixels-map">
-                            	<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=San%20Francisco%2C%20S601%20Townsend%20Street%2C%20California%2C%20USA&amp;amp;t=m&amp;amp;z=16&amp;amp;output=embed&amp;amp;iwloc=near&amp;output=embed"></iframe>
+                            	<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2771.355807614849!2d106.69949443055354!3d10.789165666072165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752914432343f9%3A0x668789912c952627!2sC%C3%B4ng%20ty%20TNHH%20GalaxyOne!5e0!3m2!1sen!2s!4v1673085669536!5m2!1sen!2s&amp;amp;t=m&amp;amp;z=16&amp;amp;output=embed&amp;amp;iwloc=near&amp;output=embed"></iframe>
                             </div>
                       </div>
                       <div class="block-title">
                         <h3>How Can I <span>Help You?</span></h3>
                       </div>
 
-                      <form id="contact_form" class="contact-form" action="https://formsubmit.co/bisiceteasec@email.com" method="POST">
-
+                      <form id="contact_form" class="contact-form" onsubmit="sendMail(); reset(); return false;">
                         <div class="messages"></div>
-
                         <div class="controls two-columns">
                           <div class="fields clearfix">
                             <div class="left-column">
@@ -1147,9 +1145,6 @@
                               </div>
                             </div>
                           </div>
-
-                          <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
-      
                           <input type="submit" class="button btn-send" value="Send message">
                         </div>
                       </form>
@@ -1180,5 +1175,23 @@
 
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendMail()
+      {
+        Email.send(
+        {
+            SecureToken : "cc2312f6-8de7-427e-8d82-e4cc82268d13",
+            To : "bisiceteasec@gmail.com",
+            From : "bisiceteasec@gmail.com",
+            Subject : document.getElementById("form_subject").value,
+            Body : "Name: " + document.getElementById("form_name").value
+                  + "<br> Email: " + document.getElementById("form_email").value
+                  + "<br> Message: " + document.getElementById("form_message").value
+        }).then(
+          message => alert(message)
+        );
+      }
+    </script>
   </body>
 </html>
