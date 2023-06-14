@@ -1158,7 +1158,7 @@ input[type="text"],
   width: 70%;
 }
 .skills-second-style .skill-container.skill-3 .skill-percentage {
-  width: 0%;
+  width: 50%;
 }
 .skills-second-style .skill-container.skill-4 .skill-percentage {
   width: 65%;
@@ -1209,6 +1209,17 @@ input[type="text"],
 .knowledges li {
   display: inline-block;
   background-color: #5050f5;
+  border-radius: 3px;
+  color: #fff;
+  padding: 1px 10px;
+  margin: 3px 2px;
+  font-size: 13px;
+}
+.cves {
+  list-style: none;
+}
+.cves li {
+  display: inline-block;
   border-radius: 3px;
   color: #fff;
   padding: 1px 10px;
